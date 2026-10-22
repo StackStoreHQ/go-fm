@@ -1,5 +1,9 @@
 GoFM
 =====
+
+> [!WARNING]
+> **This project is no longer maintained.** GoFM is the Go (Golang) version of this project. We recommend using [bun-fm](https://github.com/StackStoreHQ/bun-fm) instead, where future development and major new features will be focused.
+
 GoFM is a cross-platform real-time audio streaming server written in Go. It allows you to stream MP3 audio files from a specified directory over HTTP and synchronize playback across multiple clients.
 
 [![Go Version](https://img.shields.io/badge/Go-v1.16-blue)](https://golang.org/dl/)
