@@ -3,9 +3,6 @@ package modules
 import (
 	_ "embed"
 	"fmt"
-	"github.com/bogem/id3v2/v2"
-	"github.com/dmulholl/mp3lib"
-	"github.com/pxgo/go-fm/statics"
 	"math/rand"
 	"os"
 	"path/filepath"
@@ -13,6 +10,10 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/StackStoreHQ/go-fm/statics"
+	"github.com/bogem/id3v2/v2"
+	"github.com/dmulholl/mp3lib"
 )
 
 var DefaultCoverPicture = IPicture{

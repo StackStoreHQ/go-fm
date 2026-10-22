@@ -1,10 +1,11 @@
 package routes
 
 import (
-	"github.com/labstack/echo/v4"
-	"github.com/pxgo/go-fm/modules"
-	"github.com/pxgo/go-fm/tools"
 	"net/http"
+
+	"github.com/StackStoreHQ/go-fm/modules"
+	"github.com/StackStoreHQ/go-fm/tools"
+	"github.com/labstack/echo/v4"
 )
 
 func GetServerInfo(ctx echo.Context) error {
@@ -29,16 +30,16 @@ func GetServerInfo(ctx echo.Context) error {
 
 // PWA Manifest结构
 type PWAManifest struct {
-	Name            string        `json:"name"`
-	ShortName       string        `json:"short_name"`
-	Description     string        `json:"description"`
-	StartURL        string        `json:"start_url"`
-	Display         string        `json:"display"`
-	BackgroundColor string        `json:"background_color"`
-	ThemeColor      string        `json:"theme_color"`
-	Orientation     string        `json:"orientation"`
-	Categories      []string      `json:"categories"`
-	Icons           []PWAIcon     `json:"icons"`
+	Name            string    `json:"name"`
+	ShortName       string    `json:"short_name"`
+	Description     string    `json:"description"`
+	StartURL        string    `json:"start_url"`
+	Display         string    `json:"display"`
+	BackgroundColor string    `json:"background_color"`
+	ThemeColor      string    `json:"theme_color"`
+	Orientation     string    `json:"orientation"`
+	Categories      []string  `json:"categories"`
+	Icons           []PWAIcon `json:"icons"`
 }
 
 type PWAIcon struct {
@@ -51,7 +52,7 @@ type PWAIcon struct {
 func GetManifest(ctx echo.Context) error {
 	// 获取当前应用名称
 	appName := modules.Config.Name
-	
+
 	manifest := PWAManifest{
 		Name:            appName,
 		ShortName:       appName,
@@ -79,7 +80,7 @@ func GetManifest(ctx echo.Context) error {
 	}
 
 	ctx.Response().Header().Set("Content-Type", "application/manifest+json")
-	
+
 	// 直接返回JSON响应
 	return ctx.JSON(http.StatusOK, manifest)
 }

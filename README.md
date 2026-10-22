@@ -7,16 +7,16 @@ GoFM
 GoFM is a cross-platform real-time audio streaming server written in Go. It allows you to stream MP3 audio files from a specified directory over HTTP and synchronize playback across multiple clients.
 
 [![Go Version](https://img.shields.io/badge/Go-v1.16-blue)](https://golang.org/dl/)
-[![Go Report Card](https://goreportcard.com/badge/github.com/pxgo/go-fm)](https://goreportcard.com/report/github.com/pxgo/go-fm)
-[![Downloads](https://img.shields.io/github/downloads/pxgo/go-fm/total)](https://github.com/pxgo/go-fm/releases)
-[![References](https://img.shields.io/github/forks/pxgo/go-fm?label=references)](https://github.com/pxgo/go-fm/network/members)
-[![License](https://img.shields.io/github/license/pxgo/go-fm)](https://github.com/pxgo/go-fm/blob/main/LICENSE)
+[![Go Report Card](https://goreportcard.com/badge/github.com/StackStoreHQ/go-fm)](https://goreportcard.com/report/github.com/StackStoreHQ/go-fm)
+[![Downloads](https://img.shields.io/github/downloads/StackStoreHQ/go-fm/total)](https://github.com/StackStoreHQ/go-fm/releases)
+[![References](https://img.shields.io/github/forks/StackStoreHQ/go-fm?label=references)](https://github.com/StackStoreHQ/go-fm/network/members)
+[![License](https://img.shields.io/github/license/StackStoreHQ/go-fm)](https://github.com/StackStoreHQ/go-fm/blob/main/LICENSE)
 
 ![GoFM](./statics/home.png)
 
 ## Usage
 
-To use GoFM, download the latest release from the [Releases page](https://github.com/pxgo/go-fm/releases) and run the server with the following command:
+To use GoFM, download the latest release from the [Releases page](https://github.com/StackStoreHQ/go-fm/releases) and run the server with the following command:
 
  
 ```bash
@@ -107,16 +107,16 @@ docker run -d --name gofm \
             ```bash
         echo <YOUR_GHCR_PAT> | docker login ghcr.io -u <YOUR_GITHUB_USERNAME> --password-stdin
         ```
-3. Build image with a version tag (example uses repository `pxgo/go-fm`):
+3. Build image with a version tag (example uses repository `StackStoreHQ/go-fm`):
    
             ```bash
-        docker build -t ghcr.io/pxgo/go-fm:latest -t ghcr.io/pxgo/go-fm:$(cat conf/version.txt | tr -d '\r') .
+        docker build -t ghcr.io/stackstorehq/go-fm:latest -t ghcr.io/stackstorehq/go-fm:$(cat conf/version.txt | tr -d '\r') .
         ```
 4. Push tags:
    
             ```bash
-        docker push ghcr.io/pxgo/go-fm:latest
-        docker push ghcr.io/pxgo/go-fm:$(cat conf/version.txt | tr -d '\r')
+        docker push ghcr.io/stackstorehq/go-fm:latest
+        docker push ghcr.io/stackstorehq/go-fm:$(cat conf/version.txt | tr -d '\r')
         ```
 5. (Optional) Add a README for the package: In GitHub UI go to `Packages` -> `go-fm` -> `Edit`.
 
@@ -168,8 +168,8 @@ jobs:
                     push: true
                     platforms: linux/amd64,linux/arm64
                     tags: |
-                        ghcr.io/pxgo/go-fm:latest
-                        ghcr.io/pxgo/go-fm:${{ steps.vars.outputs.version }}
+                        ghcr.io/stackstorehq/go-fm:latest
+                        ghcr.io/stackstorehq/go-fm:${{ steps.vars.outputs.version }}
                     build-args: |
                         VERSION=${{ steps.vars.outputs.version }}
 ```
@@ -177,15 +177,15 @@ jobs:
 After pushing a tag like `v0.2.4`, the workflow will publish both `latest` and the versioned tag to GHCR. Consumers pull with:
  
 ```bash
-docker pull ghcr.io/pxgo/go-fm:latest
+docker pull ghcr.io/stackstorehq/go-fm:latest
 ```
 
 Or a specific version:
  
 ```bash
-docker pull ghcr.io/pxgo/go-fm:v0.2.4
+docker pull ghcr.io/stackstorehq/go-fm:v0.2.4
 ```
 
 ## License
 
-GoFM is released under the [MIT License](https://github.com/pxgo/go-fm/blob/main/LICENSE). Feel free to use, modify, and distribute the software. Contributions are welcome!
+GoFM is released under the [MIT License](https://github.com/StackStoreHQ/go-fm/blob/main/LICENSE). Feel free to use, modify, and distribute the software. Contributions are welcome!

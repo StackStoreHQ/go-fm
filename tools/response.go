@@ -1,6 +1,6 @@
 package tools
 
-import "github.com/pxgo/go-fm/settings"
+import "github.com/StackStoreHQ/go-fm/settings"
 
 type IResponse struct {
 }
